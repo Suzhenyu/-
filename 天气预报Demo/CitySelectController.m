@@ -16,6 +16,8 @@
 @interface CitySelectController ()
 {
     __weak IBOutlet UICollectionView *_cityCollectionView;
+    __weak IBOutlet UITextField *_tfSearch;
+    
     NSMutableArray *_dataArr;
 }
 
@@ -79,6 +81,7 @@
         }
         [_cityCollectionView reloadData];
     }
+    [self.view endEditing:YES];
     
     return YES;
 }
@@ -95,4 +98,12 @@
     [super didReceiveMemoryWarning];
 }
 
+- (IBAction)cancelAction:(UIButton *)sender {
+    _tfSearch.text=@"";
+    [self.view endEditing:YES];
+    
+    _dataArr=[NSMutableArray array];
+    _dataArr=[[DBCity shareCity] selectAllCityName];
+    [_cityCollectionView reloadData];
+}
 @end

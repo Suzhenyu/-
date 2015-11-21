@@ -10,4 +10,7 @@
 
 @interface CitySelectController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UITextFieldDelegate>
 
+- (IBAction)cancelAction:(UIButton *)sender;
+
+
 @end

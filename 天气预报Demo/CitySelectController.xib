@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CitySelectController">
             <connections>
                 <outlet property="_cityCollectionView" destination="MMo-xg-17R" id="0hJ-BM-E6y"/>
+                <outlet property="_tfSearch" destination="Qgg-7e-qBb" id="f73-ZM-6J3"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -34,6 +35,9 @@
                             <state key="normal" title="取消">
                                 <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="cancelAction:" destination="-1" eventType="touchUpInside" id="N35-Rk-ne3"/>
+                            </connections>
                         </button>
                     </subviews>
                     <animations/>
