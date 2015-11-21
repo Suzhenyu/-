@@ -10,6 +10,5 @@
 
 @interface CityDetailCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UILabel *lbPawn;
 
 @end

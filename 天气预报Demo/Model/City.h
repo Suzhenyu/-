@@ -14,4 +14,6 @@
 @property (nonatomic, assign) int cityId;
 @property (nonatomic, copy) NSString *cityName;
 
+@property (nonatomic, assign) BOOL citySelect;
+
 @end

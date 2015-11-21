@@ -49,47 +49,47 @@ static ShowImage *singleInstance=nil;
     }else if ([str isEqualToString:@"暴雨"]) {
         return @"w10";
     }else if ([str isEqualToString:@"阵雪（白天）"]) {
-        return @"13";
+        return @"w13";
     }else if ([str isEqualToString:@"阵雪"]) {
-        return @"13";
+        return @"w13";
     }else if ([str isEqualToString:@"小雪"]) {
-        return @"14";
+        return @"w14";
     }else if ([str isEqualToString:@"中雪"]) {
-        return @"15";
+        return @"w15";
     }else if ([str isEqualToString:@"大雪"]) {
-        return @"16";
+        return @"w16";
     }else if ([str isEqualToString:@"暴雪"]) {
-        return @"17";
+        return @"w17";
     }else if ([str isEqualToString:@"雾（白天）"]) {
-        return @"18";
+        return @"w18";
     }else if ([str isEqualToString:@"雾"]) {
-        return @"18";
+        return @"w18";
     }else if ([str isEqualToString:@"冰雨"]) {
-        return @"19";
+        return @"w19";
     }else if ([str isEqualToString:@"沙尘暴（白天）"]) {
-        return @"20";
+        return @"w20";
     }else if ([str isEqualToString:@"沙尘暴"]) {
-        return @"20";
+        return @"w20";
     }else if ([str isEqualToString:@"扬沙（白天）"]) {
-        return @"29";
+        return @"w29";
     }else if ([str isEqualToString:@"扬沙"]) {
-        return @"29";
+        return @"w29";
     }else if ([str isEqualToString:@"晴（夜间）"]) {
-        return @"30";
+        return @"w30";
     }else if ([str isEqualToString:@"多云（夜间）"]) {
-        return @"31";
+        return @"w31";
     }else if ([str isEqualToString:@"雾（夜间）"]) {
-        return @"32";
+        return @"w32";
     }else if ([str isEqualToString:@"阵雨（夜间）"]) {
-        return @"33";
+        return @"w33";
     }else if ([str isEqualToString:@"阵雪（夜间）"]) {
-        return @"34";
+        return @"w34";
     }else if ([str isEqualToString:@"扬沙（夜间）"]) {
-        return @"35";
+        return @"w35";
     }else if ([str isEqualToString:@"强扬沙（夜间）"]) {
-        return @"36";
+        return @"w36";
     }else if ([str isEqualToString:@"霾"]) {
-        return @"45";
+        return @"w45";
     }else{
         return @"error";
     }

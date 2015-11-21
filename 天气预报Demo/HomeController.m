@@ -93,12 +93,29 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 80;
 }
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     CityDetailController *ctl=[[CityDetailController alloc] init];
     ctl.cityName=[[_array objectAtIndex:indexPath.row] cityName];
     [self.navigationController pushViewController:ctl animated:YES];
+}
+//删除
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
+    return YES;
+}
+- (nullable NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath NS_AVAILABLE_IOS(3_0) __TVOS_PROHIBITED{
+    return @"确定删除";
+}
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+    /**
+     *  这里需要删除的有：视图，数据源，数据库
+     *  其实可以先删除数据库，然后更新视图和数据源
+     */
+    [[DBMyCity shareMyCity] delectMyCity:[[_array objectAtIndex:indexPath.row] cityName]];
+    _array=[[DBMyCity shareMyCity] selectMyCityInfo];
+    [_tableView reloadData];
+//    [_tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    
 }
 
 #pragma mark--

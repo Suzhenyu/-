@@ -25,5 +25,9 @@
  *  插入数据
  */
 -(BOOL)insertMyCityInfo:(MyCity *)city;
+/**
+ *  删除数据
+ */
+-(BOOL)delectMyCity:(NSString *)cityName;
 
 @end

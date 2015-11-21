@@ -42,6 +42,11 @@
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cUi-bf-PFa">
+                        <rect key="frame" x="9" y="56" width="25" height="25"/>
+                        <animations/>
+                        <color key="backgroundColor" red="0.83137254900000002" green="0.83529411760000005" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
+                    </imageView>
                     <imageView userInteractionEnabled="NO" tag="201" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="w0.png" translatesAutoresizingMaskIntoConstraints="NO" id="CSG-P6-feK">
                         <rect key="frame" x="9" y="56" width="25" height="25"/>
                         <animations/>
@@ -53,6 +58,11 @@
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aPd-As-RVx">
+                        <rect key="frame" x="111" y="56" width="25" height="25"/>
+                        <animations/>
+                        <color key="backgroundColor" red="0.83137254900000002" green="0.83529411760000005" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
+                    </imageView>
                     <imageView userInteractionEnabled="NO" tag="202" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="w0.png" translatesAutoresizingMaskIntoConstraints="NO" id="6If-Zc-KbX">
                         <rect key="frame" x="111" y="56" width="25" height="25"/>
                         <animations/>
@@ -64,6 +74,11 @@
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jcC-HB-vRJ">
+                        <rect key="frame" x="219" y="56" width="25" height="25"/>
+                        <animations/>
+                        <color key="backgroundColor" red="0.83137254900000002" green="0.83529411760000005" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
+                    </imageView>
                     <imageView userInteractionEnabled="NO" tag="203" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="w0.png" translatesAutoresizingMaskIntoConstraints="NO" id="249-FA-WeP">
                         <rect key="frame" x="219" y="56" width="25" height="25"/>
                         <animations/>
@@ -83,9 +98,6 @@
                 <animations/>
             </tableViewCellContentView>
             <animations/>
-            <connections>
-                <outlet property="lbPawn" destination="Dgz-ls-sHo" id="Acf-fm-njc"/>
-            </connections>
             <point key="canvasLocation" x="241" y="277.5"/>
         </tableViewCell>
     </objects>

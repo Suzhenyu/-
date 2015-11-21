@@ -104,17 +104,18 @@ static DBCity *singleInstance=nil;
         return nil;
     }
     
-    NSString *sqlStr=[NSString stringWithFormat:@"SELECT id,cityName FROM citys"];
+    NSString *sqlStr=[NSString stringWithFormat:@"SELECT * FROM citys"];
     sqlite3_stmt *statment;
     int result=sqlite3_prepare_v2(_dbSqlite, [sqlStr UTF8String], -1, &statment, nil);
     if (result!=SQLITE_OK) {
         NSLog(@"查询所有cityInfo失败");
     }
     while (sqlite3_step(statment)==SQLITE_ROW) {
-        int cityId=sqlite3_column_int(statment, 0);
-        NSString *cityName=[NSString stringWithUTF8String:(char *)sqlite3_column_text(statment, 1)];
-        NSArray *array=@[[NSNumber numberWithInt:cityId],cityName];
-        [arr addObject:array];
+        City *city=[[City alloc] init];
+        city.cityCode=[NSString stringWithUTF8String:(char *)sqlite3_column_text(statment, 0)];
+        city.cityId=sqlite3_column_int(statment, 1);
+        city.cityName=[NSString stringWithUTF8String:(char *)sqlite3_column_text(statment, 2)];
+        [arr addObject:city];
     }
     sqlite3_finalize(statment);
     

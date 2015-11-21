@@ -129,4 +129,28 @@ static DBMyCity *singleInstance=nil;
     return YES;
 }
 
+/**
+ *  删除数据
+ */
+-(BOOL)delectMyCity:(NSString *)cityName{
+    if (![self openDB]) {
+        NSLog(@"删除我的城市信息时打开数据库失败");
+        return NO;
+    }
+    
+    NSString *sqlStr=[NSString stringWithFormat:@"DELETE FROM tb_mycitys WHERE cityName='%@'",cityName];
+    int result=sqlite3_exec(_dbSqlite, [sqlStr UTF8String], nil, nil, nil);
+    if (result!=SQLITE_OK) {
+        NSLog(@"删除我的城市信息失败");
+        return NO;
+    }
+    
+    if (![self closeDB]) {
+        NSLog(@"删除我的城市信息关闭数据库失败");
+        return NO;
+    }
+    
+    return YES;
+}
+
 @end

@@ -10,6 +10,8 @@
 #import "CitySelectCell.h"
 #import "DB/DBCity.h"
 #import "City.h"
+#import "DB/DBMyCity.h"
+#import "MyCity.h"
 
 #define CELL_ID @"cellId"
 
@@ -32,7 +34,15 @@
     [_cityCollectionView registerNib:nib forCellWithReuseIdentifier:@"CitySelectCell"];
 }
 -(void)viewWillAppear:(BOOL)animated{
-    _dataArr=[[DBCity shareCity] selectAllCityName];
+    _dataArr=[[DBCity shareCity] selectAllCityInfo];
+    NSArray *arrSelect=[[DBMyCity shareMyCity] selectMyCityInfo];
+    for (City *city in _dataArr) {
+        for (MyCity *myCity in arrSelect) {
+            if ([city.cityName isEqualToString:myCity.cityName]) {
+                city.citySelect=YES;
+            }
+        }
+    }
     
     self.title=@"添加城市";
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"nav_bg_ios7"] forBarMetrics:UIBarMetricsDefault];
@@ -54,20 +64,23 @@
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     CitySelectCell *cell=[collectionView dequeueReusableCellWithReuseIdentifier:@"CitySelectCell" forIndexPath:indexPath];
+    City *city=[_dataArr objectAtIndex:indexPath.row];
     UILabel *lbCityName=(UILabel *)[cell viewWithTag:100];
-    lbCityName.text=[_dataArr objectAtIndex:indexPath.row];
+    lbCityName.text=city.cityName;
     UIImageView *ivSelect=(UIImageView *)[cell viewWithTag:101];
-    ivSelect.hidden=YES;
+    if (city.citySelect) {
+        ivSelect.hidden=NO;
+    }else{
+        ivSelect.hidden=YES;
+    }
     
     return cell;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    NSString *cityName=[_dataArr objectAtIndex:indexPath.row];
+    NSString *cityName=[[_dataArr objectAtIndex:indexPath.row] cityName];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"showCity" object:cityName];
-    [self dismissViewControllerAnimated:YES completion:^{
-        
-    }];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark--

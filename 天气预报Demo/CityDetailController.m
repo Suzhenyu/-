@@ -16,16 +16,16 @@
 @interface CityDetailController ()
 {
     __weak IBOutlet UITableView *_tableView;
-    NSMutableData *_data;                   //用于存储从服务端返回的数据
-    NSMutableArray *_array;                 //用于存储未来6天的天气信息
+    NSMutableData *_data;                       //用于存储从服务端返回的数据
+    NSMutableArray *_array;                     //用于存储未来6天的天气信息
 
-    NSString *_lbDateStr;            //时间
-    NSString *_lbDawnStr;           //早：温度＋风力
-    NSString *_lbDayStr;           //中：温度＋风力
-    NSString *_lbNightStr;           //晚：温度＋风力
-    NSString *_imgDawnStr;          //对应图片
-    NSString *_imgDayStr;          //
-    NSString *_imgNightStr;          //
+    NSString *_lbDateStr;                       //时间
+    NSString *_lbDawnStr;                       //早：温度＋风力
+    NSString *_lbDayStr;                        //中：温度＋风力
+    NSString *_lbNightStr;                      //晚：温度＋风力
+    NSString *_imgDawnStr;                      //对应图片
+    NSString *_imgDayStr;
+    NSString *_imgNightStr;
 }
 
 @end
@@ -173,6 +173,9 @@
 #pragma mark  UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 85;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
